@@ -1,13 +1,24 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { Component } from "react";
 import "./App.css";
+import { Provider } from "react-redux";
+import configureStore from "./store/configureStore";
 
-function App() {
-    return (
-        <div className="App">
-            <h1>Family Portal</h1>
-        </div>
-    );
+import PortalBody from "../src/containers/portalBody";
+
+export default class App extends Component {
+    store = configureStore();
+    render() {
+        return (
+            <html lang="en">
+                <head></head>
+                <body>
+                    <Provider store={this.store}>
+                        <PortalBody />
+                    </Provider>
+                </body>
+            </html>
+        );
+    }
 }
 
-export default App;
+// export default App;

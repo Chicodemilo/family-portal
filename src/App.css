@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+.portalBody {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    letter-spacing: 0.5em;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    padding-left: 100px;
+    padding-right: 100px;
+    overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.headerTime {
+    font-weight: lighter;
+    font-size: 6em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.timeBlock {
+    width: 40%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.headerDate {
+    font-weight: lighter;
+    font-size: 1.5em;
 }
 
-.App-link {
-  color: #61dafb;
+.calendarList {
+    margin-top: 60px;
+    padding-left: 50px;
+    width: 80%;
+    height: 400px;
+    padding-bottom: 80px;
+    overflow: hidden;
+}
+
+.calendarItemOld {
+    color: gray;
+    letter-spacing: normal;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    font-size: 1em;
+}
+
+.calendarItem {
+    letter-spacing: normal;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    font-size: 1em;
+}
+
+.calendarItemSoon {
+    margin-top: -2px;
+    margin-bottom: -2px;
+    letter-spacing: normal;
+    font-size: 1.5em;
+}
+
+.calendarItemSooner {
+    margin-top: -2px;
+    margin-bottom: -2px;
+    color: rgb(107, 213, 255);
+    letter-spacing: normal;
+    font-size: 3em;
+}
+
+.twitterScroll {
+    position: fixed;
+    bottom: 20px;
+    left: 0px;
+    width: 100%;
+    height: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.weatherBox {
+    position: absolute;
+    top: 30px;
+    right: 200px;
+    width: 550px;
+    height: 130px;
+    font-size: 1.4em;
+}
+
+.weatherIcon {
+    position: relative;
+    top: 10px;
+}
+
+.twitterScroll p {
+    font-size: 2.8em;
+    letter-spacing: normal;
+    display: inline-block;
+    padding-left: 100%;
+    animation: twitterScroll 90s linear infinite;
+}
+@keyframes twitterScroll {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
