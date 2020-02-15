@@ -26,7 +26,7 @@ class PortalBody extends Component {
         setInterval(this.handleGetCalendar, 10000);
         setInterval(this.handleGetTwitter, 10000);
         setInterval(this.handleGetWeather, 900000);
-        // setInterval(this.handleGetForecast, 90000);
+        setInterval(this.handleGetForecast, 90000);
     }
 
     handleGetForecast = () => {
@@ -66,7 +66,6 @@ class PortalBody extends Component {
                             {this.state.dateString}
                         </span>
                     </div>
-                    {this.props.testName}
                 </div>
                 <WeatherBox currentWeather={this.props.apiWeather} />
                 <CalendarList calendarItems={this.props.apiCalendar} />

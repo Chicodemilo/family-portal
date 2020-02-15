@@ -56,7 +56,7 @@ export const getCalendar = () => {
 export const getForecast = () => {
     return async dispatch => {
         try {
-            fetch("http://localhost:3003/weather.php", {
+            fetch("http://localhost:3003/forecast.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json"
@@ -72,7 +72,6 @@ export const getForecast = () => {
                     let forecastItems = null;
                     try {
                         forecastItems = JSON.parse(text);
-                        console.log(forecastItems);
                     } catch (e) {
                         forecastItems = [];
                     }

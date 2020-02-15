@@ -82,15 +82,32 @@
 .weatherBox {
     position: absolute;
     top: 30px;
-    right: 200px;
+    right: 230px;
     width: 550px;
     height: 130px;
     font-size: 1.4em;
+    padding: 10px;
+    text-align: center;
 }
 
 .weatherIcon {
     position: relative;
     top: 10px;
+}
+
+.forecastBox {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dotted gray;
+}
+
+.forecastItem {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    letter-spacing: normal;
+    font-size: 0.8em;
+    padding: 7px;
 }
 
 .twitterScroll p {
@@ -100,6 +117,7 @@
     padding-left: 100%;
     animation: twitterScroll 90s linear infinite;
 }
+
 @keyframes twitterScroll {
     0% {
         transform: translate(0, 0);
