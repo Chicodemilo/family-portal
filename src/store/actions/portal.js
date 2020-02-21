@@ -3,6 +3,9 @@ export const GET_WEATHER = "GET_WEATHER";
 export const GET_CALENDAR = "GET_CALENDAR";
 export const GET_TWITTER = "GET_TWITTER";
 export const GET_FORECAST = "GET_FORECAST";
+export const GET_JOKE = "GET_JOKE";
+export const GET_HISTORY = "GET_HISTORY";
+export const GET_FACT = "GET_FACT";
 
 export const changeTest = newTest => {
     return async dispatch => {
@@ -86,7 +89,7 @@ export const getForecast = () => {
 export const getTwitter = () => {
     return async dispatch => {
         try {
-            fetch("http://localhost:3003/twitterTest.php", {
+            fetch("http://localhost:3003/twitterTestTwo.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json"
@@ -102,6 +105,35 @@ export const getTwitter = () => {
                     try {
                         twItems = JSON.parse(text);
                         dispatch({ type: GET_TWITTER, newTwitter: twItems });
+                    } catch (e) {
+                        twItems = [];
+                    }
+                });
+        } catch (e) {
+            console.log(e);
+        }
+    };
+};
+
+export const getHistory = () => {
+    return async dispatch => {
+        try {
+            fetch("http://localhost:3003/twitterTest.php", {
+                method: "get",
+                headers: {
+                    Accept: "application/json"
+                }
+            })
+                .then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.text();
+                    }
+                })
+                .then(text => {
+                    let twItems = null;
+                    try {
+                        twItems = JSON.parse(text);
+                        dispatch({ type: GET_HISTORY, newHistory: twItems });
                     } catch (e) {
                         twItems = [];
                     }
@@ -135,6 +167,66 @@ export const getWeather = () => {
                         currWeather = [];
                     }
                     dispatch({ type: GET_WEATHER, newWeather: currWeather });
+                });
+        } catch (e) {
+            console.log(e);
+        }
+    };
+};
+
+export const getJoke = () => {
+    return async dispatch => {
+        try {
+            fetch("http://localhost:3003/joke.php", {
+                method: "get",
+                headers: {
+                    Accept: "application/json"
+                }
+            })
+                .then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.text();
+                    }
+                    throw new Error(response);
+                })
+                .then(text => {
+                    let currJoke = null;
+                    try {
+                        currJoke = JSON.parse(text);
+                    } catch (e) {
+                        currJoke = [];
+                    }
+                    dispatch({ type: GET_JOKE, newJoke: currJoke });
+                });
+        } catch (e) {
+            console.log(e);
+        }
+    };
+};
+
+export const getFact = () => {
+    return async dispatch => {
+        try {
+            fetch("http://localhost:3003/fact.php", {
+                method: "get",
+                headers: {
+                    Accept: "application/json"
+                }
+            })
+                .then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.text();
+                    }
+                    throw new Error(response);
+                })
+                .then(text => {
+                    let currFact = null;
+                    try {
+                        currFact = JSON.parse(text);
+                    } catch (e) {
+                        currFact = [];
+                    }
+                    dispatch({ type: GET_FACT, newFact: currFact });
                 });
         } catch (e) {
             console.log(e);

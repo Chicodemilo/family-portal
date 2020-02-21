@@ -1,18 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { changeTest, getWeather, getCalendar, getTwitter, getForecast } from "../store/actions/portal";
+import { changeTest, getWeather, getCalendar, getTwitter, getForecast, getHistory, getJoke, getFact } from "../store/actions/portal";
 import moment from "moment";
 import CalendarList from "../components/calendarList";
 import TwitterScroll from "../components/twitterScroll";
 import WeatherBox from "../components/weatherBox";
-import { getForkTsCheckerWebpackPluginHooks } from "fork-ts-checker-webpack-plugin/lib/hooks";
+import FunnyThing from "../components/funnyThing";
 
 class PortalBody extends Component {
     state = {
         tweetItems: [],
         tweetString: "",
         dateString: "",
-        timeString: ""
+        timeString: "",
+        newFunnyThing: ""
     };
 
     componentDidMount() {
@@ -21,13 +22,61 @@ class PortalBody extends Component {
         this.handleTimeChange();
         this.handleGetWeather();
         this.handleGetForecast();
+        this.props.fetchNewHistory();
+        this.props.fetchNewJoke();
+        this.props.fetchNewFact();
 
+        setInterval(this.showFunnyThing, 30000);
         setInterval(this.handleTimeChange, 1000);
         setInterval(this.handleGetCalendar, 10000);
         setInterval(this.handleGetTwitter, 10000);
-        setInterval(this.handleGetWeather, 900000);
-        setInterval(this.handleGetForecast, 90000);
+        setInterval(this.handleGetWeather, 300000);
+        setInterval(this.handleGetForecast, 300000);
     }
+
+    showFunnyThing = () => {
+        let picker = Math.round(Math.random() * 2);
+        console.log(picker);
+
+        switch (picker) {
+            case 0:
+                this.props.fetchNewHistory().then(() => {
+                    let newKey = Math.random();
+                    if (this.props.historyItem !== "") {
+                        this.setState({
+                            newFunnyThing: <FunnyThing key={newKey} funnyItem={this.props.historyItem} />
+                        });
+                    }
+                });
+                break;
+            case 1:
+                this.props.fetchNewJoke().then(() => {
+                    let newKey = Math.random();
+                    if (this.props.historyItem !== "") {
+                        this.setState({
+                            newFunnyThing: <FunnyThing key={newKey} funnyItem={this.props.jokeItem} />
+                        });
+                    }
+                });
+                break;
+
+            case 2:
+                this.props.fetchNewFact().then(() => {
+                    let newKey = Math.random();
+                    if (this.props.historyItem !== "") {
+                        this.setState({
+                            newFunnyThing: <FunnyThing key={newKey} funnyItem={this.props.factItem} />
+                        });
+                    }
+                });
+                break;
+
+            default:
+                break;
+        }
+
+        // console.log(thisFunnyThing);
+    };
 
     handleGetForecast = () => {
         this.props.fetchNewForecast();
@@ -67,6 +116,7 @@ class PortalBody extends Component {
                         </span>
                     </div>
                 </div>
+                {this.state.newFunnyThing}
                 <WeatherBox currentWeather={this.props.apiWeather} />
                 <CalendarList calendarItems={this.props.apiCalendar} />
                 <TwitterScroll tweetItems={this.props.apiTwitter} />
@@ -81,7 +131,11 @@ const mapStateToProps = state => {
         apiWeather: state.portalData.apiWeather,
         apiCalendar: state.portalData.apiCalendar,
         apiTwitter: state.portalData.apiTwitter,
-        apiForecast: state.portalData.apiForecast
+        apiForecast: state.portalData.apiForecast,
+        funnyThing: state.portalData.funnyThing,
+        historyItem: state.portalData.apiTodayInHistory,
+        jokeItem: state.portalData.apiJoke,
+        factItem: state.portalData.apiFact
     };
 };
 
@@ -91,7 +145,10 @@ const mapDispatchToProps = dispatch => {
         fetchNewWeather: () => dispatch(getWeather()),
         fetchNewCalendar: () => dispatch(getCalendar()),
         fetchNewTwitter: () => dispatch(getTwitter()),
-        fetchNewForecast: () => dispatch(getForecast())
+        fetchNewForecast: () => dispatch(getForecast()),
+        fetchNewHistory: () => dispatch(getHistory()),
+        fetchNewJoke: () => dispatch(getJoke()),
+        fetchNewFact: () => dispatch(getFact())
     };
 };
 

@@ -20,8 +20,10 @@ const CalendarList = props => {
         }
 
         let printTime = item.date;
-        if (moment(item.date).format("HH:mm a") == "00:00 am") {
-            printTime = moment(item.date).format("ddd MMM DD") + ", All Day";
+        if (moment(item.date).format("HH:mm a") === "00:00 am") {
+            let thisYear = moment().format("YYYY");
+            let thisEventDate = moment(item.date).format(`MM/DD/${thisYear}, HH:mm:ss`);
+            printTime = moment(thisEventDate).format("ddd MMM DD") + ", All Day";
         }
         return (
             <p className={dateClass} key={key}>

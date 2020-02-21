@@ -1,6 +1,6 @@
 import React from "react";
 
-const CalendarList = props => {
+const TwitterScroll = props => {
     return (
         <div className="twitterScroll">
             <p>{props.tweetItems}</p>
@@ -8,4 +8,4 @@ const CalendarList = props => {
     );
 };
 
-export default CalendarList;
+export default TwitterScroll;

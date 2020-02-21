@@ -30,7 +30,7 @@
 }
 
 .calendarList {
-    margin-top: 60px;
+    margin-top: 30px;
     padding-left: 50px;
     width: 80%;
     height: 400px;
@@ -41,23 +41,23 @@
 .calendarItemOld {
     color: gray;
     letter-spacing: normal;
-    margin-top: 9px;
-    margin-bottom: 9px;
-    font-size: 1em;
+    margin-top: 11px;
+    margin-bottom: 11px;
+    font-size: 1.2em;
 }
 
 .calendarItem {
     letter-spacing: normal;
-    margin-top: 9px;
-    margin-bottom: 9px;
-    font-size: 1em;
+    margin-top: 11px;
+    margin-bottom: 11px;
+    font-size: 1.2em;
 }
 
 .calendarItemSoon {
     margin-top: -2px;
     margin-bottom: -2px;
     letter-spacing: normal;
-    font-size: 1.5em;
+    font-size: 1.7em;
 }
 
 .calendarItemSooner {
@@ -70,7 +70,8 @@
 
 .twitterScroll {
     position: fixed;
-    bottom: 20px;
+    bottom: 30px;
+    height: 70px;
     left: 0px;
     width: 100%;
     height: 100px;
@@ -111,11 +112,12 @@
 }
 
 .twitterScroll p {
+    vertical-align: middle;
     font-size: 2.8em;
     letter-spacing: normal;
     display: inline-block;
     padding-left: 100%;
-    animation: twitterScroll 90s linear infinite;
+    animation: twitterScroll 30s linear infinite;
 }
 
 @keyframes twitterScroll {
@@ -133,5 +135,43 @@
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+.funnyThingContainer {
+    z-index: 100;
+    position: absolute;
+    display: block;
+    top: 320px;
+    right: 350px;
+    width: 500px;
+    height: 450px;
+    overflow-y: visible;
+    /* border: 1px solid blue; */
+    padding: 10px;
+    /* border-radius: 20px; */
+    letter-spacing: normal;
+    font-size: 1.7em;
+    line-height: 1.5em;
+    text-align: center;
+    opacity: 1;
+    animation: fadeinout 10s linear forwards;
+}
+
+@keyframes fadeinout {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

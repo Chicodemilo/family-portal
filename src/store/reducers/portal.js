@@ -3,7 +3,12 @@ const initialState = {
     apiWeather: [],
     apiCalendar: [],
     apiTwitter: [],
-    apiForecast: []
+    apiForecast: [],
+    apiTodayInHistory: "",
+    apiJoke: "",
+    apiFact: "",
+    apiQuote: [],
+    funnyThing: "My dog used to chase people on a bike a lot. It got so bad I had to take his bike away."
 };
 
 const portalReducer = (state = initialState, action) => {
@@ -20,7 +25,8 @@ const portalReducer = (state = initialState, action) => {
 
         case "GET_TWITTER":
             const tweetStringData = action.newTwitter.reduce((string, item) => {
-                return string + item.summary + " :: ";
+                let cleanSummary = item.summary.replace("#QZZXXWEE42", " ");
+                return string + " ›››› " + item.date + ":" + cleanSummary + " ";
             }, " ");
             if (tweetStringData !== action.apiTwitter) {
                 return { ...state, apiTwitter: tweetStringData };
@@ -29,6 +35,24 @@ const portalReducer = (state = initialState, action) => {
 
         case "GET_FORECAST":
             return { ...state, apiForecast: action.newForecast };
+
+        case "GET_HISTORY":
+            const HistoryStringData = action.newHistory.reduce((string, item) => {
+                let cleanSummary = item.summary;
+                return cleanSummary;
+            }, " ");
+            return { ...state, apiTodayInHistory: HistoryStringData };
+
+        case "GET_JOKE":
+            // console.log(action.newJoke.joke);
+            // const JokeStringData = action.newJoke.reduce((string, item) => {
+            //     let cleanJoke = item.joke;
+            //     return cleanJoke;
+            // }, " ");
+            return { ...state, apiJoke: action.newJoke.joke };
+
+        case "GET_FACT":
+            return { ...state, apiFact: action.newFact.fact };
 
         default:
             return state;
