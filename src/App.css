@@ -84,9 +84,9 @@
     position: absolute;
     top: 30px;
     right: 230px;
-    width: 550px;
+    width: 600px;
     height: 130px;
-    font-size: 1.4em;
+    font-size: 1.8em;
     padding: 10px;
     text-align: center;
 }
@@ -97,17 +97,17 @@
 }
 
 .forecastBox {
-    margin-top: 10px;
-    padding-top: 10px;
+    margin-top: 12px;
+    padding-top: 12px;
     border-top: 1px dotted gray;
 }
 
 .forecastItem {
     display: inline-block;
-    height: 60px;
-    width: 60px;
+    height: 70px;
+    width: 70px;
     letter-spacing: normal;
-    font-size: 0.8em;
+    font-size: 0.7em;
     padding: 7px;
 }
 
@@ -155,20 +155,20 @@
     line-height: 1.5em;
     text-align: center;
     opacity: 1;
-    animation: fadeinout 10s linear forwards;
+    animation: fadeinout 180s linear forwards;
 }
 
 @keyframes fadeinout {
     0% {
         opacity: 0;
     }
-    5% {
+    2% {
         opacity: 0;
     }
     10% {
         opacity: 1;
     }
-    95% {
+    98% {
         opacity: 1;
     }
     100% {

@@ -7,7 +7,7 @@ const initialState = {
     apiTodayInHistory: "",
     apiJoke: "",
     apiFact: "",
-    apiQuote: [],
+    apiQuote: "",
     funnyThing: "My dog used to chase people on a bike a lot. It got so bad I had to take his bike away."
 };
 
@@ -44,15 +44,14 @@ const portalReducer = (state = initialState, action) => {
             return { ...state, apiTodayInHistory: HistoryStringData };
 
         case "GET_JOKE":
-            // console.log(action.newJoke.joke);
-            // const JokeStringData = action.newJoke.reduce((string, item) => {
-            //     let cleanJoke = item.joke;
-            //     return cleanJoke;
-            // }, " ");
             return { ...state, apiJoke: action.newJoke.joke };
 
         case "GET_FACT":
             return { ...state, apiFact: action.newFact.fact };
+
+        case "GET_QUOTE":
+            let thisQuote = action.newQuote.quote + " - " + action.newQuote.author;
+            return { ...state, apiQuote: thisQuote };
 
         default:
             return state;

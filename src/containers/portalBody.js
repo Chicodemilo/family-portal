@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { changeTest, getWeather, getCalendar, getTwitter, getForecast, getHistory, getJoke, getFact } from "../store/actions/portal";
+import { changeTest, getWeather, getCalendar, getTwitter, getForecast, getHistory, getJoke, getFact, getQuote } from "../store/actions/portal";
 import moment from "moment";
 import CalendarList from "../components/calendarList";
 import TwitterScroll from "../components/twitterScroll";
@@ -25,8 +25,9 @@ class PortalBody extends Component {
         this.props.fetchNewHistory();
         this.props.fetchNewJoke();
         this.props.fetchNewFact();
+        this.props.fetchNewQuote();
 
-        setInterval(this.showFunnyThing, 30000);
+        setInterval(this.showFunnyThing, 2200000);
         setInterval(this.handleTimeChange, 1000);
         setInterval(this.handleGetCalendar, 10000);
         setInterval(this.handleGetTwitter, 10000);
@@ -36,8 +37,9 @@ class PortalBody extends Component {
 
     showFunnyThing = () => {
         let picker = Math.round(Math.random() * 2);
-        console.log(picker);
 
+        picker = 3;
+        console.log(picker);
         switch (picker) {
             case 0:
                 this.props.fetchNewHistory().then(() => {
@@ -59,7 +61,6 @@ class PortalBody extends Component {
                     }
                 });
                 break;
-
             case 2:
                 this.props.fetchNewFact().then(() => {
                     let newKey = Math.random();
@@ -70,12 +71,19 @@ class PortalBody extends Component {
                     }
                 });
                 break;
-
+            case 3:
+                this.props.fetchNewQuote().then(() => {
+                    let newKey = Math.random();
+                    if (this.props.historyItem !== "") {
+                        this.setState({
+                            newFunnyThing: <FunnyThing key={newKey} funnyItem={this.props.quoteItem} />
+                        });
+                    }
+                });
+                break;
             default:
                 break;
         }
-
-        // console.log(thisFunnyThing);
     };
 
     handleGetForecast = () => {
@@ -135,7 +143,8 @@ const mapStateToProps = state => {
         funnyThing: state.portalData.funnyThing,
         historyItem: state.portalData.apiTodayInHistory,
         jokeItem: state.portalData.apiJoke,
-        factItem: state.portalData.apiFact
+        factItem: state.portalData.apiFact,
+        quoteItem: state.portalData.apiQuote
     };
 };
 
@@ -148,7 +157,8 @@ const mapDispatchToProps = dispatch => {
         fetchNewForecast: () => dispatch(getForecast()),
         fetchNewHistory: () => dispatch(getHistory()),
         fetchNewJoke: () => dispatch(getJoke()),
-        fetchNewFact: () => dispatch(getFact())
+        fetchNewFact: () => dispatch(getFact()),
+        fetchNewQuote: () => dispatch(getQuote())
     };
 };
 

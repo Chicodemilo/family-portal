@@ -6,6 +6,7 @@ export const GET_FORECAST = "GET_FORECAST";
 export const GET_JOKE = "GET_JOKE";
 export const GET_HISTORY = "GET_HISTORY";
 export const GET_FACT = "GET_FACT";
+export const GET_QUOTE = "GET_QUOTE";
 
 export const changeTest = newTest => {
     return async dispatch => {
@@ -227,6 +228,36 @@ export const getFact = () => {
                         currFact = [];
                     }
                     dispatch({ type: GET_FACT, newFact: currFact });
+                });
+        } catch (e) {
+            console.log(e);
+        }
+    };
+};
+
+export const getQuote = () => {
+    return async dispatch => {
+        try {
+            fetch("http://localhost:3003/quote.php", {
+                method: "get",
+                headers: {
+                    Accept: "application/json"
+                }
+            })
+                .then(response => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.text();
+                    }
+                    throw new Error(response);
+                })
+                .then(text => {
+                    let currQuote = null;
+                    try {
+                        currQuote = JSON.parse(text);
+                    } catch (e) {
+                        currQuote = [];
+                    }
+                    dispatch({ type: GET_QUOTE, newQuote: currQuote });
                 });
         } catch (e) {
             console.log(e);
