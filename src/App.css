@@ -165,7 +165,7 @@
     line-height: 1.5em;
     text-align: center;
     opacity: 1;
-    animation: fadeinout 8s linear forwards;
+    animation: fadeinout 90s linear forwards;
 }
 
 @keyframes fadeinout {
