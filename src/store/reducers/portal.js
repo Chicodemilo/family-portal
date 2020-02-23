@@ -12,6 +12,7 @@ const initialState = {
 };
 
 const portalReducer = (state = initialState, action) => {
+    //test
     switch (action.type) {
         case "CHANGE_TEST":
             const newTest = action.test;

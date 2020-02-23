@@ -40,8 +40,8 @@ class PortalBody extends Component {
     showFunnyThing = () => {
         let picker = Math.round(Math.random() * 3);
 
-        picker = 0;
-        console.log(picker);
+        // picker = 0;
+        // console.log(picker);
         switch (picker) {
             case 0:
                 this.props.fetchNewHistory().then(() => {

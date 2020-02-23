@@ -101,6 +101,10 @@
     letter-spacing: normal;
 }
 
+.anotherTest {
+    font-size: 1em;
+}
+
 .forecastBox {
     margin-top: 12px;
     padding-top: 12px;

@@ -146,6 +146,7 @@ export const getHistory = () => {
 };
 
 export const getWeather = () => {
+    //test
     return async dispatch => {
         try {
             fetch("http://localhost:3003/weather.php", {
