@@ -28,7 +28,7 @@ class PortalBody extends Component {
         this.props.fetchNewFact();
         this.props.fetchNewQuote();
 
-        setInterval(this.showFunnyThing, 1440000);
+        setInterval(this.showFunnyThing, 540000);
         // setInterval(this.showFunnyThing, 10000);
         setInterval(this.handleTimeChange, 1000);
         setInterval(this.handleGetCalendar, 10000);
@@ -40,7 +40,7 @@ class PortalBody extends Component {
     showFunnyThing = () => {
         let picker = Math.round(Math.random() * 3);
 
-        // picker = 3;
+        picker = 0;
         console.log(picker);
         switch (picker) {
             case 0:

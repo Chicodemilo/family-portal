@@ -8,7 +8,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
     letter-spacing: 0.5em;
-    padding-top: 30px;
+    padding-top: 40px;
     padding-bottom: 0px;
     padding-left: 100px;
     padding-right: 100px;
@@ -30,7 +30,7 @@
 }
 
 .calendarList {
-    margin-top: 50px;
+    margin-top: 65px;
     padding-left: 50px;
     width: 80%;
     height: 500px;
@@ -57,7 +57,7 @@
     margin-top: -2px;
     margin-bottom: -2px;
     letter-spacing: normal;
-    font-size: 1.7em;
+    font-size: 1.9em;
 }
 
 .calendarItemSooner {
@@ -65,7 +65,7 @@
     margin-bottom: -2px;
     color: rgb(107, 213, 255);
     letter-spacing: normal;
-    font-size: 3em;
+    font-size: 2.7em;
 }
 
 .twitterScroll {
@@ -94,6 +94,11 @@
 .weatherIcon {
     position: relative;
     top: 10px;
+}
+
+.littleWeather {
+    font-size: 0.6em;
+    letter-spacing: normal;
 }
 
 .forecastBox {
@@ -142,20 +147,21 @@
     z-index: 100;
     position: absolute;
     display: block;
-    top: 320px;
-    right: 350px;
-    width: 500px;
-    height: 450px;
+    top: 500px;
+    right: 300px;
+    width: 600px;
+    height: 400px;
     overflow-y: visible;
     /* border: 1px solid blue; */
     padding: 10px;
     /* border-radius: 20px; */
+    color: rgb(255, 225, 181);
     letter-spacing: normal;
-    font-size: 1.7em;
+    font-size: 2em;
     line-height: 1.5em;
     text-align: center;
     opacity: 1;
-    animation: fadeinout 90s linear forwards;
+    animation: fadeinout 8s linear forwards;
 }
 
 @keyframes fadeinout {
