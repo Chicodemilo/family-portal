@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { changeTest, getWeather, getCalendar, getTwitter, getForecast, getHistory, getJoke, getFact, getQuote } from "../store/actions/portal";
+import {
+    changeTest,
+    getWeather,
+    getCalendar,
+    getTwitter,
+    getForecast,
+    getHistory,
+    getJoke,
+    getFact,
+    getQuote,
+} from "../store/actions/portal";
 import moment from "moment";
 import CalendarList from "../components/calendarList";
 import TwitterScroll from "../components/twitterScroll";
@@ -13,7 +23,7 @@ class PortalBody extends Component {
         tweetString: "",
         dateString: "",
         timeString: "",
-        newFunnyThing: ""
+        newFunnyThing: "",
     };
 
     componentDidMount() {
@@ -33,8 +43,8 @@ class PortalBody extends Component {
         setInterval(this.handleTimeChange, 1000);
         setInterval(this.handleGetCalendar, 10000);
         setInterval(this.handleGetTwitter, 10000);
-        setInterval(this.handleGetWeather, 300000);
-        setInterval(this.handleGetForecast, 300000);
+        setInterval(this.handleGetWeather, 900000);
+        setInterval(this.handleGetForecast, 1800000);
     }
 
     showFunnyThing = () => {
@@ -48,7 +58,9 @@ class PortalBody extends Component {
                     let newKey = Math.random();
                     if (this.props.historyItem !== "") {
                         this.setState({
-                            newFunnyThing: <FunnyThing key={newKey} funnyItem={this.props.historyItem} />
+                            newFunnyThing: (
+                                <FunnyThing key={newKey} funnyItem={this.props.historyItem} />
+                            ),
                         });
                     }
                 });
@@ -58,7 +70,7 @@ class PortalBody extends Component {
                     let newKey = Math.random();
                     if (this.props.historyItem !== "") {
                         this.setState({
-                            newFunnyThing: <FunnyThing key={newKey} funnyItem={this.props.jokeItem} />
+                            newFunnyThing: <FunnyThing key={newKey} funnyItem={this.props.jokeItem} />,
                         });
                     }
                 });
@@ -68,7 +80,7 @@ class PortalBody extends Component {
                     let newKey = Math.random();
                     if (this.props.historyItem !== "") {
                         this.setState({
-                            newFunnyThing: <FunnyThing key={newKey} funnyItem={this.props.factItem} />
+                            newFunnyThing: <FunnyThing key={newKey} funnyItem={this.props.factItem} />,
                         });
                     }
                 });
@@ -78,7 +90,7 @@ class PortalBody extends Component {
                     let newKey = Math.random();
                     if (this.props.historyItem !== "") {
                         this.setState({
-                            newFunnyThing: <FunnyThing key={newKey} funnyItem={this.props.quoteItem} />
+                            newFunnyThing: <FunnyThing key={newKey} funnyItem={this.props.quoteItem} />,
                         });
                     }
                 });
@@ -102,7 +114,7 @@ class PortalBody extends Component {
         let nowDate = moment().format("dddd, MMM Do YYYY");
         this.setState({
             dateString: nowDate,
-            timeString: nowTime
+            timeString: nowTime,
         });
     };
 
@@ -135,7 +147,7 @@ class PortalBody extends Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
         testName: state.portalData.test,
         apiWeather: state.portalData.apiWeather,
@@ -146,11 +158,11 @@ const mapStateToProps = state => {
         historyItem: state.portalData.apiTodayInHistory,
         jokeItem: state.portalData.apiJoke,
         factItem: state.portalData.apiFact,
-        quoteItem: state.portalData.apiQuote
+        quoteItem: state.portalData.apiQuote,
     };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {
         testOnChange: () => dispatch(changeTest()),
         fetchNewWeather: () => dispatch(getWeather()),
@@ -160,7 +172,7 @@ const mapDispatchToProps = dispatch => {
         fetchNewHistory: () => dispatch(getHistory()),
         fetchNewJoke: () => dispatch(getJoke()),
         fetchNewFact: () => dispatch(getFact()),
-        fetchNewQuote: () => dispatch(getQuote())
+        fetchNewQuote: () => dispatch(getQuote()),
     };
 };
 
