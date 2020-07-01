@@ -8,8 +8,8 @@ export const GET_HISTORY = "GET_HISTORY";
 export const GET_FACT = "GET_FACT";
 export const GET_QUOTE = "GET_QUOTE";
 
-export const changeTest = newTest => {
-    return async dispatch => {
+export const changeTest = (newTest) => {
+    return async (dispatch) => {
         const storageTest = await getTestFromAPI();
         await dispatch({ type: CHANGE_TEST, test: storageTest });
     };
@@ -28,21 +28,21 @@ const getTestFromAPI = async () => {
 };
 
 export const getCalendar = () => {
-    return async dispatch => {
+    return async (dispatch) => {
         try {
             fetch("http://localhost:3003/calendar.php", {
                 method: "get",
                 headers: {
-                    Accept: "application/json"
-                }
+                    Accept: "application/json",
+                },
             })
-                .then(response => {
+                .then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.text();
                     }
-                    throw new Error(response);
+                    return "calendar down";
                 })
-                .then(text => {
+                .then((text) => {
                     let calItems = null;
                     try {
                         calItems = JSON.parse(text);
@@ -58,21 +58,21 @@ export const getCalendar = () => {
 };
 
 export const getForecast = () => {
-    return async dispatch => {
+    return async (dispatch) => {
         try {
             fetch("http://localhost:3003/forecast.php", {
                 method: "get",
                 headers: {
-                    Accept: "application/json"
-                }
+                    Accept: "application/json",
+                },
             })
-                .then(response => {
+                .then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.text();
                     }
-                    throw new Error(response);
+                    return "forecast down";
                 })
-                .then(text => {
+                .then((text) => {
                     let forecastItems = null;
                     try {
                         forecastItems = JSON.parse(text);
@@ -88,20 +88,20 @@ export const getForecast = () => {
 };
 
 export const getTwitter = () => {
-    return async dispatch => {
+    return async (dispatch) => {
         try {
             fetch("http://localhost:3003/twitterTestTwo.php", {
                 method: "get",
                 headers: {
-                    Accept: "application/json"
-                }
+                    Accept: "application/json",
+                },
             })
-                .then(response => {
+                .then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.text();
                     }
                 })
-                .then(text => {
+                .then((text) => {
                     let twItems = null;
                     try {
                         twItems = JSON.parse(text);
@@ -117,20 +117,20 @@ export const getTwitter = () => {
 };
 
 export const getHistory = () => {
-    return async dispatch => {
+    return async (dispatch) => {
         try {
             fetch("http://localhost:3003/twitterTest.php", {
                 method: "get",
                 headers: {
-                    Accept: "application/json"
-                }
+                    Accept: "application/json",
+                },
             })
-                .then(response => {
+                .then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.text();
                     }
                 })
-                .then(text => {
+                .then((text) => {
                     let twItems = null;
                     try {
                         twItems = JSON.parse(text);
@@ -147,21 +147,21 @@ export const getHistory = () => {
 
 export const getWeather = () => {
     //test
-    return async dispatch => {
+    return async (dispatch) => {
         try {
             fetch("http://localhost:3003/weather.php", {
                 method: "get",
                 headers: {
-                    Accept: "application/json"
-                }
+                    Accept: "application/json",
+                },
             })
-                .then(response => {
+                .then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.text();
                     }
-                    throw new Error(response);
+                    return "weather down";
                 })
-                .then(text => {
+                .then((text) => {
                     let currWeather = null;
                     try {
                         currWeather = JSON.parse(text);
@@ -177,21 +177,21 @@ export const getWeather = () => {
 };
 
 export const getJoke = () => {
-    return async dispatch => {
+    return async (dispatch) => {
         try {
             fetch("http://localhost:3003/joke.php", {
                 method: "get",
                 headers: {
-                    Accept: "application/json"
-                }
+                    Accept: "application/json",
+                },
             })
-                .then(response => {
+                .then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.text();
                     }
-                    throw new Error(response);
+                    return "joke down";
                 })
-                .then(text => {
+                .then((text) => {
                     let currJoke = null;
                     try {
                         currJoke = JSON.parse(text);
@@ -207,21 +207,21 @@ export const getJoke = () => {
 };
 
 export const getFact = () => {
-    return async dispatch => {
+    return async (dispatch) => {
         try {
             fetch("http://localhost:3003/fact.php", {
                 method: "get",
                 headers: {
-                    Accept: "application/json"
-                }
+                    Accept: "application/json",
+                },
             })
-                .then(response => {
+                .then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.text();
                     }
-                    throw new Error(response);
+                    return "fact down";
                 })
-                .then(text => {
+                .then((text) => {
                     let currFact = null;
                     try {
                         currFact = JSON.parse(text);
@@ -237,21 +237,21 @@ export const getFact = () => {
 };
 
 export const getQuote = () => {
-    return async dispatch => {
+    return async (dispatch) => {
         try {
             fetch("http://localhost:3003/quote.php", {
                 method: "get",
                 headers: {
-                    Accept: "application/json"
-                }
+                    Accept: "application/json",
+                },
             })
-                .then(response => {
+                .then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.text();
                     }
-                    throw new Error(response);
+                    return "quote down";
                 })
-                .then(text => {
+                .then((text) => {
                     let currQuote = null;
                     try {
                         currQuote = JSON.parse(text);
