@@ -40,7 +40,6 @@ export const getCalendar = () => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.text();
                     }
-                    return "calendar down";
                 })
                 .then((text) => {
                     let calItems = null;
@@ -50,6 +49,10 @@ export const getCalendar = () => {
                         calItems = [];
                     }
                     dispatch({ type: GET_CALENDAR, newCalendar: calItems });
+                })
+                .catch(() => {
+                    let badNetwork = ["badNetwork"];
+                    dispatch({ type: GET_CALENDAR, newCalendar: badNetwork });
                 });
         } catch (e) {
             console.log(e);
@@ -80,6 +83,10 @@ export const getForecast = () => {
                         forecastItems = [];
                     }
                     dispatch({ type: GET_FORECAST, newForecast: forecastItems });
+                })
+                .catch(() => {
+                    let badNetwork = ["badNetwork"];
+                    dispatch({ type: GET_FORECAST, newForecast: badNetwork });
                 });
         } catch (e) {
             console.log(e);
@@ -169,6 +176,10 @@ export const getWeather = () => {
                         currWeather = [];
                     }
                     dispatch({ type: GET_WEATHER, newWeather: currWeather });
+                })
+                .catch(() => {
+                    let badNetwork = ["badNetwork"];
+                    dispatch({ type: GET_WEATHER, newWeather: badNetwork });
                 });
         } catch (e) {
             console.log(e);
@@ -199,6 +210,10 @@ export const getJoke = () => {
                         currJoke = [];
                     }
                     dispatch({ type: GET_JOKE, newJoke: currJoke });
+                })
+                .catch(() => {
+                    let badNetwork = ["badNetwork"];
+                    dispatch({ type: GET_JOKE, newJoke: badNetwork });
                 });
         } catch (e) {
             console.log(e);
@@ -229,6 +244,10 @@ export const getFact = () => {
                         currFact = [];
                     }
                     dispatch({ type: GET_FACT, newFact: currFact });
+                })
+                .catch(() => {
+                    let badNetwork = ["badNetwork"];
+                    dispatch({ type: GET_FACT, newFact: badNetwork });
                 });
         } catch (e) {
             console.log(e);
@@ -259,6 +278,10 @@ export const getQuote = () => {
                         currQuote = [];
                     }
                     dispatch({ type: GET_QUOTE, newQuote: currQuote });
+                })
+                .catch(() => {
+                    let badNetwork = ["badNetwork"];
+                    dispatch({ type: GET_QUOTE, newQuote: badNetwork });
                 });
         } catch (e) {
             console.log(e);

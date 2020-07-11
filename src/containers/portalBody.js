@@ -27,17 +27,22 @@ class PortalBody extends Component {
     };
 
     componentDidMount() {
-        // if(getCalendar)
-        this.handleGetCalendar();
-        this.handleGetTwitter();
-        this.handleTimeChange();
-        this.handleGetWeather();
-        this.handleGetForecast();
-        this.showFunnyThing();
-        this.props.fetchNewHistory();
-        this.props.fetchNewJoke();
-        this.props.fetchNewFact();
-        this.props.fetchNewQuote();
+        this.handleGetCalendar().then(() => {
+            if (this.props.apiCalendar[0] !== "badNetwork") {
+                console.log(this.props.apiCalendar[0] !== "badNetwork");
+                console.log("HERE: portalBody.js 32 **********************************");
+                this.handleGetTwitter();
+                this.handleTimeChange();
+                this.handleGetWeather();
+                this.handleGetForecast();
+                this.showFunnyThing();
+                this.props.fetchNewHistory();
+                this.props.fetchNewJoke();
+                this.props.fetchNewFact();
+                this.props.fetchNewQuote();
+            }
+        });
+
         setInterval(this.showFunnyThing, 540000);
         setInterval(this.handleTimeChange, 1000);
         setInterval(this.handleGetCalendar, 20000);
@@ -47,64 +52,69 @@ class PortalBody extends Component {
     }
 
     showFunnyThing = () => {
-        let picker = Math.round(Math.random() * 3);
-
-        switch (picker) {
-            case 0:
-                this.props.fetchNewHistory().then(() => {
-                    let newKey = Math.random();
-                    if (this.props.historyItem !== "") {
-                        this.setState({
-                            newFunnyThing: (
-                                <FunnyThing key={newKey} funnyItem={this.props.historyItem} />
-                            ),
-                        });
-                    }
-                });
-                break;
-            case 1:
-                this.props.fetchNewJoke().then(() => {
-                    let newKey = Math.random();
-                    if (this.props.historyItem !== "") {
-                        this.setState({
-                            newFunnyThing: <FunnyThing key={newKey} funnyItem={this.props.jokeItem} />,
-                        });
-                    }
-                });
-                break;
-            case 2:
-                this.props.fetchNewFact().then(() => {
-                    let newKey = Math.random();
-                    if (this.props.historyItem !== "") {
-                        this.setState({
-                            newFunnyThing: <FunnyThing key={newKey} funnyItem={this.props.factItem} />,
-                        });
-                    }
-                });
-                break;
-            case 3:
-                this.props.fetchNewQuote().then(() => {
-                    let newKey = Math.random();
-                    if (this.props.historyItem !== "") {
-                        this.setState({
-                            newFunnyThing: <FunnyThing key={newKey} funnyItem={this.props.quoteItem} />,
-                        });
-                    }
-                });
-                break;
-            default:
-                break;
+        if (this.props.apiCalendar[0] !== "badNetwork") {
+            let picker = Math.round(Math.random() * 3);
+            switch (picker) {
+                case 0:
+                    this.props.fetchNewHistory().then(() => {
+                        let newKey = Math.random();
+                        if (this.props.historyItem !== "") {
+                            this.setState({
+                                newFunnyThing: (
+                                    <FunnyThing key={newKey} funnyItem={this.props.historyItem} />
+                                ),
+                            });
+                        }
+                    });
+                    break;
+                case 1:
+                    this.props.fetchNewJoke().then(() => {
+                        let newKey = Math.random();
+                        if (this.props.historyItem !== "") {
+                            this.setState({
+                                newFunnyThing: (
+                                    <FunnyThing key={newKey} funnyItem={this.props.jokeItem} />
+                                ),
+                            });
+                        }
+                    });
+                    break;
+                case 2:
+                    this.props.fetchNewFact().then(() => {
+                        let newKey = Math.random();
+                        if (this.props.historyItem !== "") {
+                            this.setState({
+                                newFunnyThing: (
+                                    <FunnyThing key={newKey} funnyItem={this.props.factItem} />
+                                ),
+                            });
+                        }
+                    });
+                    break;
+                case 3:
+                    this.props.fetchNewQuote().then(() => {
+                        let newKey = Math.random();
+                        if (this.props.historyItem !== "") {
+                            this.setState({
+                                newFunnyThing: (
+                                    <FunnyThing key={newKey} funnyItem={this.props.quoteItem} />
+                                ),
+                            });
+                        }
+                    });
+                    break;
+                default:
+                    break;
+            }
         }
     };
 
     handleGetForecast = () => {
-        this.props.fetchNewForecast();
+        if (this.props.apiCalendar[0] !== "badNetwork") this.props.fetchNewForecast();
     };
 
     handleGetWeather = () => {
-        this.props.fetchNewWeather();
-        console.log("HERE: portalBody.js 106 **********************************");
-        console.log(this.props.apiWeather);
+        if (this.props.apiCalendar[0] !== "badNetwork") this.props.fetchNewWeather();
     };
 
     handleTimeChange = () => {
@@ -117,16 +127,24 @@ class PortalBody extends Component {
         });
     };
 
-    handleGetCalendar = () => {
-        this.props.fetchNewCalendar();
-        console.log(this.props.fetchNewCalendar);
+    handleGetCalendar = async () => {
+        return new Promise((resolve, reject) => {
+            this.props.fetchNewCalendar().then(resolve());
+            reject();
+        });
     };
 
     handleGetTwitter = () => {
-        this.props.fetchNewTwitter();
+        if (this.props.apiCalendar[0] !== "badNetwork") this.props.fetchNewTwitter();
     };
 
     render() {
+        let badNetwork =
+            this.props.apiCalendar[0] == "badNetwork" ? (
+                <p style={{ color: "blue", fontSize: 40, paddingTop: 60 }}>
+                    Oh No! Goodtime Internet's Got The Blues!
+                </p>
+            ) : null;
         return (
             <div className="portalBody">
                 <div className="headerBlock">
@@ -140,6 +158,7 @@ class PortalBody extends Component {
                 </div>
                 {this.state.newFunnyThing}
                 <WeatherBox currentWeather={this.props.apiWeather} />
+                {badNetwork}
                 <CalendarList calendarItems={this.props.apiCalendar} />
                 <TwitterScroll tweetItems={this.props.apiTwitter} />
             </div>
