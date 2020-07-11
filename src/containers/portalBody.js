@@ -27,6 +27,7 @@ class PortalBody extends Component {
     };
 
     componentDidMount() {
+        // if(getCalendar)
         this.handleGetCalendar();
         this.handleGetTwitter();
         this.handleTimeChange();
@@ -37,21 +38,17 @@ class PortalBody extends Component {
         this.props.fetchNewJoke();
         this.props.fetchNewFact();
         this.props.fetchNewQuote();
-
         setInterval(this.showFunnyThing, 540000);
-        // setInterval(this.showFunnyThing, 10000);
         setInterval(this.handleTimeChange, 1000);
         setInterval(this.handleGetCalendar, 20000);
         setInterval(this.handleGetTwitter, 20000);
-        setInterval(this.handleGetWeather, 900000);
-        setInterval(this.handleGetForecast, 1800000);
+        setInterval(this.handleGetWeather, 1800000);
+        setInterval(this.handleGetForecast, 3600000);
     }
 
     showFunnyThing = () => {
         let picker = Math.round(Math.random() * 3);
 
-        // picker = 0;
-        // console.log(picker);
         switch (picker) {
             case 0:
                 this.props.fetchNewHistory().then(() => {
@@ -106,6 +103,8 @@ class PortalBody extends Component {
 
     handleGetWeather = () => {
         this.props.fetchNewWeather();
+        console.log("HERE: portalBody.js 106 **********************************");
+        console.log(this.props.apiWeather);
     };
 
     handleTimeChange = () => {
@@ -120,6 +119,7 @@ class PortalBody extends Component {
 
     handleGetCalendar = () => {
         this.props.fetchNewCalendar();
+        console.log(this.props.fetchNewCalendar);
     };
 
     handleGetTwitter = () => {
