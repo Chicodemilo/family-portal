@@ -45,10 +45,11 @@ export const getCalendar = () => {
                     let calItems = null;
                     try {
                         calItems = JSON.parse(text);
+                        dispatch({ type: GET_CALENDAR, newCalendar: calItems });
                     } catch (e) {
-                        calItems = [];
+                        let badNetwork = ["badNetwork"];
+                        dispatch({ type: GET_CALENDAR, newCalendar: badNetwork });
                     }
-                    dispatch({ type: GET_CALENDAR, newCalendar: calItems });
                 })
                 .catch(() => {
                     let badNetwork = ["badNetwork"];

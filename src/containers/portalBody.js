@@ -29,8 +29,6 @@ class PortalBody extends Component {
     componentDidMount() {
         this.handleGetCalendar().then(() => {
             if (this.props.apiCalendar[0] !== "badNetwork") {
-                console.log(this.props.apiCalendar[0] !== "badNetwork");
-                console.log("HERE: portalBody.js 32 **********************************");
                 this.handleGetTwitter();
                 this.handleTimeChange();
                 this.handleGetWeather();
