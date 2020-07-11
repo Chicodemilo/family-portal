@@ -33,8 +33,8 @@ class PortalBody extends Component {
                 if (this.props.apiCalendar[0] !== "badNetwork") {
                     this.handleGetTwitter();
                     this.handleTimeChange();
-                    this.handleGetWeather();
-                    this.handleGetForecast();
+                    // this.handleGetWeather();
+                    // this.handleGetForecast();
                     this.showFunnyThing();
                     this.props.fetchNewHistory();
                     this.props.fetchNewJoke();
@@ -49,8 +49,8 @@ class PortalBody extends Component {
         setInterval(this.handleTimeChange, 1000);
         setInterval(this.handleGetCalendar, 20000);
         setInterval(this.handleGetTwitter, 20000);
-        setInterval(this.handleGetWeather, 1800000);
-        setInterval(this.handleGetForecast, 3600000);
+        // setInterval(this.handleGetWeather, 1800000);
+        // setInterval(this.handleGetForecast, 3600000);
     }
 
     showFunnyThing = () => {
