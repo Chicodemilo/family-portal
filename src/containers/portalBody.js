@@ -24,22 +24,26 @@ class PortalBody extends Component {
         dateString: "",
         timeString: "",
         newFunnyThing: "",
+        firstRun: true,
     };
 
     componentDidMount() {
-        this.handleGetCalendar().then(() => {
-            if (this.props.apiCalendar[0] !== "badNetwork") {
-                this.handleGetTwitter();
-                this.handleTimeChange();
-                this.handleGetWeather();
-                this.handleGetForecast();
-                this.showFunnyThing();
-                this.props.fetchNewHistory();
-                this.props.fetchNewJoke();
-                this.props.fetchNewFact();
-                this.props.fetchNewQuote();
-            }
-        });
+        if (this.state.firstRun == true) {
+            this.handleGetCalendar().then(() => {
+                if (this.props.apiCalendar[0] !== "badNetwork") {
+                    this.handleGetTwitter();
+                    this.handleTimeChange();
+                    this.handleGetWeather();
+                    this.handleGetForecast();
+                    this.showFunnyThing();
+                    this.props.fetchNewHistory();
+                    this.props.fetchNewJoke();
+                    this.props.fetchNewFact();
+                    this.props.fetchNewQuote();
+                }
+            });
+            this.state.firstRun = false;
+        }
 
         setInterval(this.showFunnyThing, 540000);
         setInterval(this.handleTimeChange, 1000);
@@ -143,6 +147,16 @@ class PortalBody extends Component {
                     Oh No! Goodtime Internet's Got The Blues!
                 </p>
             ) : null;
+
+        console.log(this.props.apiWeather.length);
+        let conditionalWeather = null;
+
+        if (this.props.apiWeather.length === 0) {
+            conditionalWeather = <p>** WEATHER API DOWN **</p>;
+        } else {
+            conditionalWeather = <WeatherBox currentWeather={this.props.apiWeather} />;
+        }
+
         return (
             <div className="portalBody">
                 <div className="headerBlock">
@@ -155,7 +169,7 @@ class PortalBody extends Component {
                     </div>
                 </div>
                 {this.state.newFunnyThing}
-                <WeatherBox currentWeather={this.props.apiWeather} />
+                {conditionalWeather}
                 {badNetwork}
                 <CalendarList calendarItems={this.props.apiCalendar} />
                 <TwitterScroll tweetItems={this.props.apiTwitter} />
