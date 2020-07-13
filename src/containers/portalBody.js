@@ -24,17 +24,17 @@ class PortalBody extends Component {
         dateString: "",
         timeString: "",
         newFunnyThing: "",
-        firstRun: true,
+        weatherFirstRun: true,
     };
 
     componentDidMount() {
-        if (this.state.firstRun == true) {
+        if (this.state.weatherFirstRun == true) {
             this.handleGetCalendar().then(() => {
                 if (this.props.apiCalendar[0] !== "badNetwork") {
                     this.handleGetTwitter();
                     this.handleTimeChange();
-                    // this.handleGetWeather();
-                    // this.handleGetForecast();
+                    this.handleGetWeather();
+                    this.handleGetForecast();
                     this.showFunnyThing();
                     this.props.fetchNewHistory();
                     this.props.fetchNewJoke();
@@ -42,15 +42,14 @@ class PortalBody extends Component {
                     this.props.fetchNewQuote();
                 }
             });
-            this.state.firstRun = false;
         }
 
         setInterval(this.showFunnyThing, 540000);
         setInterval(this.handleTimeChange, 1000);
         setInterval(this.handleGetCalendar, 20000);
         setInterval(this.handleGetTwitter, 20000);
-        // setInterval(this.handleGetWeather, 1800000);
-        // setInterval(this.handleGetForecast, 3600000);
+        setInterval(this.handleGetWeather, 900000);
+        setInterval(this.handleGetForecast, 1800000);
     }
 
     showFunnyThing = () => {
@@ -117,6 +116,9 @@ class PortalBody extends Component {
 
     handleGetWeather = () => {
         if (this.props.apiCalendar[0] !== "badNetwork") this.props.fetchNewWeather();
+        this.setState({
+            weatherFirstRun: false,
+        });
     };
 
     handleTimeChange = () => {
@@ -148,14 +150,14 @@ class PortalBody extends Component {
                 </p>
             ) : null;
 
-        console.log(this.props.apiWeather.length);
-        let conditionalWeather = null;
+        // console.log(this.props.apiWeather.length);
+        let conditionalWeather = <WeatherBox currentWeather={this.props.apiWeather} />;
 
-        if (this.props.apiWeather.length === 0) {
-            conditionalWeather = <p>** WEATHER API DOWN **</p>;
-        } else {
-            conditionalWeather = <WeatherBox currentWeather={this.props.apiWeather} />;
-        }
+        // if (this.state.weatherFirstRun === false && this.props.apiWeather.length === 0) {
+        //     conditionalWeather = <p>** WEATHER API DOWN **</p>;
+        // } else {
+        //     conditionalWeather = <WeatherBox currentWeather={this.props.apiWeather} />;
+        // }
 
         return (
             <div className="portalBody">
