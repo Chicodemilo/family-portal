@@ -120,7 +120,17 @@
     padding: 7px;
 }
 
+@font-face{
+    font-family:
+    'NotoColorEmoji',
+    Verdana,
+    Tahoma,
+    sans-serif;
+    src: url('NotoColorEmoji.ttf') format('truetype');
+}
+
 .twitterScroll p {
+    font-family: 'NotoColorEmoji';
     vertical-align: middle;
     font-size: 2.8em;
     letter-spacing: normal;
