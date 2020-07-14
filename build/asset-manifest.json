@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/build/static/css/main.9465b07f.chunk.css",
+    "main.css": "/build/static/css/main.33619148.chunk.css",
     "main.js": "/build/static/js/main.eb3a12ed.chunk.js",
     "main.js.map": "/build/static/js/main.eb3a12ed.chunk.js.map",
     "runtime-main.js": "/build/static/js/runtime-main.496ae38d.js",
@@ -8,16 +8,15 @@
     "static/js/2.10faa756.chunk.js": "/build/static/js/2.10faa756.chunk.js",
     "static/js/2.10faa756.chunk.js.map": "/build/static/js/2.10faa756.chunk.js.map",
     "index.html": "/build/index.html",
-    "precache-manifest.21159c16bbe2d4adee189008286071dd.js": "/build/precache-manifest.21159c16bbe2d4adee189008286071dd.js",
+    "precache-manifest.edaf1a28f5fba15d81aea4fae05e54dc.js": "/build/precache-manifest.edaf1a28f5fba15d81aea4fae05e54dc.js",
     "service-worker.js": "/build/service-worker.js",
-    "static/css/main.9465b07f.chunk.css.map": "/build/static/css/main.9465b07f.chunk.css.map",
-    "static/js/2.10faa756.chunk.js.LICENSE.txt": "/build/static/js/2.10faa756.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/build/static/media/NotoColorEmoji.857efa29.ttf"
+    "static/css/main.33619148.chunk.css.map": "/build/static/css/main.33619148.chunk.css.map",
+    "static/js/2.10faa756.chunk.js.LICENSE.txt": "/build/static/js/2.10faa756.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.496ae38d.js",
     "static/js/2.10faa756.chunk.js",
-    "static/css/main.9465b07f.chunk.css",
+    "static/css/main.33619148.chunk.css",
     "static/js/main.eb3a12ed.chunk.js"
   ]
 }

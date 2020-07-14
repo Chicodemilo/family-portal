@@ -126,7 +126,7 @@
     Verdana,
     Tahoma,
     sans-serif;
-    src: url('NotoColorEmoji.ttf') format('truetype');
+    src: url('/home/pi/.fonts/Noto Color Emoji.ttf') format('truetype');
 }
 
 .twitterScroll p {
