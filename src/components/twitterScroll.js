@@ -1,9 +1,9 @@
 import React from "react";
 
-const TwitterScroll = props => {
+const TwitterScroll = (props) => {
     return (
         <div className="twitterScroll">
-            <p>{props.tweetItems}</p>
+            <p>{props.text}</p>
         </div>
     );
 };

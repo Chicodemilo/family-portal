@@ -145,8 +145,17 @@ class PortalBody extends Component {
     render() {
         let badNetwork =
             this.props.apiCalendar[0] == "badNetwork" ? (
-                <p style={{ color: "blue", fontSize: 40, paddingTop: 60 }}>
-                    Oh No! Goodtime Internet's Got The Blues!
+                <p
+                    style={{
+                        color: "blue",
+                        fontSize: 55,
+                        paddingTop: 100,
+                        fontWeight: "bold",
+                        letterSpacing: 0.6,
+                    }}
+                >
+                    Oh No!!!! <br></br>
+                    <br></br>Goodtime Internet's Got The Blues.
                 </p>
             ) : null;
 
@@ -174,7 +183,7 @@ class PortalBody extends Component {
                 {conditionalWeather}
                 {badNetwork}
                 <CalendarList calendarItems={this.props.apiCalendar} />
-                <TwitterScroll tweetItems={this.props.apiTwitter} />
+                <TwitterScroll text={this.props.apiTwitter} />
             </div>
         );
     }
