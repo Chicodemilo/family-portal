@@ -30,7 +30,7 @@ const getTestFromAPI = async () => {
 export const getCalendar = () => {
     return async (dispatch) => {
         try {
-            fetch("../../../../family-portal-api/calendar.php", {
+            fetch("http://localhost/calendar.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json",
