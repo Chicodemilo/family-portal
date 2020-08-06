@@ -225,6 +225,7 @@ export const getJoke = () => {
 export const getFact = () => {
     return async (dispatch) => {
         try {
+            //here
             fetch("http://192.168.1.3/family-portal-api/fact.php", {
                 method: "get",
                 headers: {
