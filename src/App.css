@@ -13,6 +13,7 @@
     padding-left: 100px;
     padding-right: 100px;
     overflow: hidden;
+    /* font-size: 1.1em; */
 }
 
 .headerTime {
@@ -26,12 +27,12 @@
 
 .headerDate {
     font-weight: lighter;
-    font-size: 1.5em;
+    font-size: 1.7em;
 }
 
 .calendarList {
-    margin-top: 40px;
-    padding-left: 50px;
+    margin-top: 25px;
+    padding-left: 55px;
     width: 80%;
     height: 550px;
     padding-bottom: 80px;
@@ -41,16 +42,16 @@
 .calendarItemOld {
     color: gray;
     letter-spacing: normal;
-    margin-top: 11px;
-    margin-bottom: 11px;
-    font-size: 1.3em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4em;
 }
 
 .calendarItem {
     letter-spacing: normal;
-    margin-top: 11px;
-    margin-bottom: 11px;
-    font-size: 1.3em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4em;
 }
 
 .calendarItemSoon {
@@ -83,10 +84,10 @@
 .weatherBox {
     position: absolute;
     top: 30px;
-    right: 230px;
-    width: 600px;
+    right: 240px;
+    width: 700px;
     height: 130px;
-    font-size: 1.8em;
+    font-size: 1.9em;
     padding: 10px;
     text-align: center;
 }
@@ -97,7 +98,7 @@
 }
 
 .littleWeather {
-    font-size: 0.6em;
+    font-size: 0.7em;
     letter-spacing: normal;
 }
 
@@ -116,16 +117,16 @@
     height: 70px;
     width: 70px;
     letter-spacing: normal;
-    font-size: 0.7em;
-    padding: 7px;
+    font-size: 0.75em;
+    padding: 7px 15px 7px 15px;
 }
 
-@font-face{
+@font-face {
     font-family:
-    'NotoColorEmoji',
-    Verdana,
-    Tahoma,
-    sans-serif;
+        'NotoColorEmoji',
+        Verdana,
+        Tahoma,
+        sans-serif;
     src: url('/home/pi/.fonts/Noto Color Emoji.ttf') format('truetype');
 }
 
@@ -143,6 +144,7 @@
     0% {
         transform: translate(0, 0);
     }
+
     100% {
         transform: translate(-100%, 0);
     }
@@ -152,6 +154,7 @@
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -161,7 +164,7 @@
     z-index: 100;
     position: absolute;
     display: block;
-    top: 500px;
+    top: 450px;
     right: 300px;
     width: 600px;
     height: 400px;
@@ -182,15 +185,19 @@
     0% {
         opacity: 0;
     }
+
     2% {
         opacity: 0;
     }
+
     10% {
         opacity: 1;
     }
+
     98% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }
