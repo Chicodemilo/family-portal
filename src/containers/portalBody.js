@@ -44,31 +44,36 @@ class PortalBody extends Component {
             });
         }
 
-        setInterval(this.showFunnyThing, 960000);
+        setInterval(this.showFunnyThing, 96000);
         setInterval(this.handleTimeChange, 1000);
         setInterval(this.handleGetCalendar, 20000);
-        setInterval(this.handleGetTwitter, 20000);
+        setInterval(this.handleGetTwitter, 1000);
         setInterval(this.handleGetWeather, 900000);
         setInterval(this.handleGetForecast, 1800000);
     }
 
     showFunnyThing = () => {
         if (this.props.apiCalendar[0] !== "badNetwork") {
-            let picker = Math.round(Math.random() * 3);
+            let picker = Math.round(Math.random() * 4);
+            // console.log(picker);
+            // picker = 1;
             switch (picker) {
-                case 0:
+                case 1:
                     this.props.fetchNewHistory().then(() => {
                         let newKey = Math.random();
                         if (this.props.historyItem !== "") {
                             this.setState({
                                 newFunnyThing: (
-                                    <FunnyThing key={newKey} funnyItem={this.props.historyItem} />
+                                    <FunnyThing
+                                        key={newKey}
+                                        funnyItem={this.props.historyItem.history}
+                                    />
                                 ),
                             });
                         }
                     });
                     break;
-                case 1:
+                case 2:
                     this.props.fetchNewJoke().then(() => {
                         let newKey = Math.random();
                         if (this.props.historyItem !== "") {
@@ -80,7 +85,7 @@ class PortalBody extends Component {
                         }
                     });
                     break;
-                case 2:
+                case 3:
                     this.props.fetchNewFact().then(() => {
                         let newKey = Math.random();
                         if (this.props.historyItem !== "") {
@@ -92,7 +97,7 @@ class PortalBody extends Component {
                         }
                     });
                     break;
-                case 3:
+                case 4:
                     this.props.fetchNewQuote().then(() => {
                         let newKey = Math.random();
                         if (this.props.historyItem !== "") {
@@ -159,14 +164,7 @@ class PortalBody extends Component {
                 </p>
             ) : null;
 
-        // console.log(this.props.apiWeather.length);
         let conditionalWeather = <WeatherBox currentWeather={this.props.apiWeather} />;
-
-        // if (this.state.weatherFirstRun === false && this.props.apiWeather.length === 0) {
-        //     conditionalWeather = <p>** WEATHER API DOWN **</p>;
-        // } else {
-        //     conditionalWeather = <WeatherBox currentWeather={this.props.apiWeather} />;
-        // }
 
         return (
             <div className="portalBody">

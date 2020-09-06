@@ -25,25 +25,31 @@ const portalReducer = (state = initialState, action) => {
         case "GET_CALENDAR":
             return { ...state, apiCalendar: action.newCalendar };
 
+        // case "GET_TWITTER":
+        //     const tweetStringData = action.newTwitter.reduce((string, item) => {
+        //         let cleanSummary = item.summary.replace("#QZZXXWEE42", " ");
+        //         return string + " ›››› " + item.date + ":" + cleanSummary + " ";
+        //     }, " ");
+        //     if (tweetStringData !== action.apiTwitter) {
+        //         return { ...state, apiTwitter: tweetStringData };
+        //     }
+        //     break;
+
         case "GET_TWITTER":
-            const tweetStringData = action.newTwitter.reduce((string, item) => {
-                let cleanSummary = item.summary.replace("#QZZXXWEE42", " ");
-                return string + " ›››› " + item.date + ":" + cleanSummary + " ";
-            }, " ");
-            if (tweetStringData !== action.apiTwitter) {
-                return { ...state, apiTwitter: tweetStringData };
-            }
-            break;
+            // const tweetStringData = action.newTwitter.reduce((string, item) => {
+            //     let cleanSummary = item.summary.replace("#QZZXXWEE42", " ");
+            //     return string + " ›››› " + item.date + ":" + cleanSummary + " ";
+            // }, " ");
+            // if (tweetStringData !== action.apiTwitter) {
+            //
+            // }
+            return { ...state, apiTwitter: action.newTwitter };
 
         case "GET_FORECAST":
             return { ...state, apiForecast: action.newForecast };
 
         case "GET_HISTORY":
-            const HistoryStringData = action.newHistory.reduce((string, item) => {
-                let cleanSummary = item.summary;
-                return cleanSummary;
-            }, " ");
-            return { ...state, apiTodayInHistory: HistoryStringData };
+            return { ...state, apiTodayInHistory: action.newHistory };
 
         case "GET_JOKE":
             return { ...state, apiJoke: action.newJoke.joke };

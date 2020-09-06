@@ -98,7 +98,7 @@ export const getForecast = () => {
 export const getTwitter = () => {
     return async (dispatch) => {
         try {
-            fetch("http://192.168.1.3/family-portal-api/twitterTestTwo.php", {
+            fetch("http://localhost:3003/getStatus.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json",
@@ -127,7 +127,7 @@ export const getTwitter = () => {
 export const getHistory = () => {
     return async (dispatch) => {
         try {
-            fetch("http://192.168.1.3/family-portal-api/twitterTest.php", {
+            fetch("http://localhost:3003/history.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json",
@@ -139,12 +139,12 @@ export const getHistory = () => {
                     }
                 })
                 .then((text) => {
-                    let twItems = null;
+                    let histItems = null;
                     try {
-                        twItems = JSON.parse(text);
-                        dispatch({ type: GET_HISTORY, newHistory: twItems });
+                        histItems = JSON.parse(text);
+                        dispatch({ type: GET_HISTORY, newHistory: histItems });
                     } catch (e) {
-                        twItems = [];
+                        histItems = [];
                     }
                 });
         } catch (e) {
