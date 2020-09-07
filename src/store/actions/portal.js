@@ -98,7 +98,7 @@ export const getForecast = () => {
 export const getTwitter = () => {
     return async (dispatch) => {
         try {
-            fetch("http://localhost:3003/getStatus.php", {
+            fetch("http://192.168.1.3/family-portal-api/getStatus.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json",
@@ -127,7 +127,7 @@ export const getTwitter = () => {
 export const getHistory = () => {
     return async (dispatch) => {
         try {
-            fetch("http://localhost:3003/history.php", {
+            fetch("http://192.168.1.3/family-portal-api/history.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json",
