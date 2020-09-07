@@ -8,7 +8,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
     letter-spacing: 0.5em;
-    padding-top: 20px;
+    padding-top: 5px;
     padding-bottom: 0px;
     padding-left: 10px;
     padding-right: 100px;
@@ -18,7 +18,7 @@
 
 .headerTime {
     font-weight: lighter;
-    font-size: 6em;
+    font-size: 8em;
 }
 
 .timeBlock {
@@ -27,11 +27,11 @@
 
 .headerDate {
     font-weight: lighter;
-    font-size: 1.7em;
+    font-size: 2.5em;
 }
 
 .calendarList {
-    margin-top: 25px;
+    margin-top: 20px;
     padding-left: 55px;
     width: 80%;
     height: 550px;
@@ -42,16 +42,16 @@
 .calendarItemOld {
     color: gray;
     letter-spacing: normal;
-    margin-top: 10px;
+    margin-top: 11px;
     margin-bottom: 10px;
-    font-size: 1.4em;
+    font-size: 1.5em;
 }
 
 .calendarItem {
     letter-spacing: normal;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 1.4em;
+    font-size: 1.5em;
 }
 
 .calendarItemSoon {
@@ -66,7 +66,7 @@
     margin-bottom: -2px;
     color: rgb(107, 213, 255);
     letter-spacing: normal;
-    font-size: 2.7em;
+    font-size: 2.6em;
 }
 
 .twitterScroll {
@@ -160,8 +160,8 @@
     z-index: 100;
     position: absolute;
     display: block;
-    top: 330px;
-    right: 150px;
+    top: 335px;
+    right: 185px;
     width: 800px;
     height: 500px;
     overflow-y: hidden;
@@ -171,10 +171,10 @@
     color: rgb(255, 225, 181);
     letter-spacing: normal;
     font-size: 1.7em;
-    line-height: 1.4em;
+    line-height: 1.3em;
     text-align: center;
     opacity: 1;
-    animation: fadeinout 90s linear forwards;
+    animation: fadeinout 95s linear forwards;
 }
 
 @keyframes fadeinout {
@@ -200,11 +200,12 @@
 }
 
 .familyStatus {
+    margin-left: 5px;
     position: fixed;
     bottom: 10px;
-    height: 150px;
+    height: 165px;
     left: 0px;
-    width: 100%;
+    width: 99%;
     white-space: nowrap;
     overflow: hidden;
     box-sizing: border-box;
@@ -224,7 +225,7 @@
 
 .famName {
     font-weight: bold;
-    color: rgb(171, 179, 223);
+    color: rgb(186, 194, 238);
     font-size: 1.4em;
 }
 
