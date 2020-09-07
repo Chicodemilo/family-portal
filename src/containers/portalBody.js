@@ -44,7 +44,7 @@ class PortalBody extends Component {
             });
         }
 
-        setInterval(this.showFunnyThing, 96000);
+        setInterval(this.showFunnyThing, 5000);
         setInterval(this.handleTimeChange, 1000);
         setInterval(this.handleGetCalendar, 20000);
         setInterval(this.handleGetTwitter, 1000);
