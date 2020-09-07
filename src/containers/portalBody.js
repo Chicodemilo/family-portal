@@ -54,7 +54,7 @@ class PortalBody extends Component {
 
     showFunnyThing = () => {
         if (this.props.apiCalendar[0] !== "badNetwork") {
-            let picker = Math.round(Math.random() * 4);
+            let picker = Math.round(Math.random() * 3);
             // console.log(picker);
             // picker = 1;
             switch (picker) {
