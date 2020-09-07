@@ -44,6 +44,7 @@ class PortalBody extends Component {
             });
         }
 
+        // setInterval(this.showFunnyThing, 960000);
         setInterval(this.showFunnyThing, 5000);
         setInterval(this.handleTimeChange, 1000);
         setInterval(this.handleGetCalendar, 20000);
@@ -54,7 +55,7 @@ class PortalBody extends Component {
 
     showFunnyThing = () => {
         if (this.props.apiCalendar[0] !== "badNetwork") {
-            let picker = Math.round(Math.random() * 3);
+            let picker = Math.round(Math.random() * 4);
             // console.log(picker);
             // picker = 1;
             switch (picker) {

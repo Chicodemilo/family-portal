@@ -6,7 +6,7 @@ const FunnyThing = (props) => {
     let replaceWith = "WhooHoo";
     let funnyItem = "";
     search.forEach((term) => {
-        funnyItem = props.funnyItem.replaceAll(term, replaceWith);
+        funnyItem = props.funnyItem.replace(term, replaceWith);
     });
 
     var n = funnyItem.search("Born Today");
