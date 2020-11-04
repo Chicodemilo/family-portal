@@ -3,7 +3,7 @@ import ForecastBox from "./forecastBox";
 
 const WeatherBox = (props) => {
     return (
-        //test
+        //test2
         <div className="weatherBox">
             {props.currentWeather["temp"]}&#176;&nbsp;&nbsp;&nbsp;
             {props.currentWeather["description"]}
