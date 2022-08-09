@@ -10,14 +10,14 @@
     letter-spacing: 0.5em;
     padding-top: 2px;
     padding-bottom: 4px;
-    padding-left: 20px;
+    padding-left: 5px;
     overflow: hidden;
     /* font-size: 1.1em; */
 }
 
 .headerTime {
     font-weight: bold;
-    font-size: 8em;
+    font-size: 7.4em;
 }
 
 .timeBlock {
@@ -26,15 +26,15 @@
 
 .headerDate {
     font-weight: lighter;
-    font-size: 3.5em;
+    font-size: 3.3em;
 }
 
 .calendarList {
     z-index: 0;
-    margin-top: 30px;
-    padding-left: 55px;
+    margin-top: 20px;
+    padding-left: 40px;
     width: 55%;
-    height: 870px;
+    height: 770px;
     /* padding-bottom: 80px; */
     overflow: hidden;
     /* border: 1px dotted orangered; */
@@ -43,38 +43,40 @@
 .calendarFade {
     position: absolute;
     width: 55%;
-    height: 870px;
+    height: 770px;
     background: rgb(0,0,0);
     background: linear-gradient(90deg, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 92%, rgba(0,0,0,1) 100%), linear-gradient(180deg, rgba(0,0,0,0) 75%, rgba(0,0,0,1) 99%, rgba(0,0,0,1) 100%);
 }
 
 .actualList{
     position: absolute;
+    overflow-y: hidden;
+    overflow-x: hidden;
     /* border: 1px solid green; */
     width: 55%;
-    height: 870px;
+    height: 770px;
 }
 
 .calendarItemOld {
     color: rgb(141, 141, 141);
     letter-spacing: normal;
-    margin-top: 15px;
+    margin-top: 12px;
     margin-bottom: 8px;
-    font-size: 2em;
+    font-size: 1.7em;
 }
 
 .calendarItem {
     letter-spacing: normal;
-    margin-top: 15px;
+    margin-top: 12px;
     margin-bottom: 8px;
-    font-size: 2em;
+    font-size: 1.7em;
 }
 
 .calendarItemSoon {
     margin-top: -2px;
     margin-bottom: -2px;
     letter-spacing: normal;
-    font-size: 2.1em;
+    font-size: 1.9em;
 }
 
 .calendarItemSooner {
@@ -82,7 +84,7 @@
     margin-bottom: -2px;
     color: rgb(0, 183, 255);
     letter-spacing: normal;
-    font-size: 2.5em;
+    font-size: 2.2em;
 }
 
 .twitterScroll {
@@ -101,10 +103,10 @@
     z-index: 10;
     position: absolute;
     top: 20px;
-    right: 30px;
-    width: 1140px;
+    right: 15px;
+    width: 950px;
     height: 140px;
-    font-size: 3.2em;
+    font-size: 2.8em;
     padding: 0px;
     text-align: center;
 }
@@ -124,18 +126,18 @@
 }
 
 .forecastBox {
-    margin-top: 12px;
-    padding-top: 12px;
+    margin-top: 10px;
+    padding-top: 10px;
     border-top: 1px dotted gray;
 }
 
 .forecastItem {
     display: inline-block;
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     letter-spacing: normal;
-    font-size: 0.75em;
-    padding: 10px 34px 10px 34px;
+    font-size: 0.65em;
+    padding: 10px 30px 10px 30px;
 }
 
 @font-face {
@@ -177,9 +179,9 @@
     z-index: 100;
     position: absolute;
     display: block;
-    top: 501px;
-    right: 50px;
-    width: 900px;
+    top: 400px;
+    right: 40px;
+    width: 800px;
     height: 500px;
     overflow-y: hidden;
     /* border: 1px solid blue; */
@@ -187,7 +189,7 @@
     /* border-radius: 20px; */
     color: rgb(255, 153, 0);
     letter-spacing: normal;
-    font-size: 1.6em;
+    font-size: 1.5em;
     line-height: 1.3em;
     text-align: left;
     opacity: 1;
@@ -244,7 +246,7 @@
 
 .famName {
     font-weight: bold;
-    color: rgb(186, 194, 238);
+    color: rgb(150, 165, 252);
     font-size: 1.5em;
     letter-spacing: -0.05em;
 }
