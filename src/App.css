@@ -62,7 +62,7 @@
     letter-spacing: normal;
     margin-top: 12px;
     margin-bottom: 8px;
-    font-size: 1.7em;
+    font-size: 1.8sem;
     text-decoration: line-through;
 }
 
@@ -70,7 +70,7 @@
     letter-spacing: normal;
     margin-top: 12px;
     margin-bottom: 8px;
-    font-size: 1.7em;
+    font-size: 1.8em;
 }
 
 .calendarItemSoon {
@@ -221,7 +221,7 @@
 }
 
 .familyStatus {
-    border-top: 1px solid rgb(179, 179, 179);
+    border-top: 2px solid rgb(255, 0, 0);
     margin-left: 5px;
     position: fixed;
     bottom: 10px;
