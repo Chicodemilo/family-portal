@@ -104,9 +104,9 @@
     position: absolute;
     top: 20px;
     right: 15px;
-    width: 950px;
+    width: 45%;
     height: 140px;
-    font-size: 2.8em;
+    font-size: 3em;
     padding: 0px;
     text-align: center;
 }
@@ -128,7 +128,7 @@
 .forecastBox {
     margin-top: 10px;
     padding-top: 10px;
-    border-top: 1px dotted gray;
+    border-top: 2px solid gray;
 }
 
 .forecastItem {
@@ -219,7 +219,7 @@
 }
 
 .familyStatus {
-    border-top: 1px dotted gray;
+    border-top: 2px solid gray;
     margin-left: 5px;
     position: fixed;
     bottom: 10px;
