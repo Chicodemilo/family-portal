@@ -27,6 +27,7 @@
 .headerDate {
     font-weight: lighter;
     font-size: 3.3em;
+    letter-spacing: .15em;
 }
 
 .calendarList {
@@ -108,8 +109,9 @@
     right: 15px;
     width: 45%;
     height: 140px;
-    font-size: 3.7em;
+    font-size: 3.6em;
     padding: 0px;
+    letter-spacing: .07em;
     text-align: center;
 }
 
@@ -138,7 +140,7 @@
     height: 60px;
     width: 60px;
     letter-spacing: normal;
-    font-size: 0.4em;
+    font-size: 0.6em;
     padding: 10px 41px 10px 41px;
 }
 
@@ -221,7 +223,7 @@
 }
 
 .familyStatus {
-    border-top: 2px solid rgb(207, 207, 207);
+    border-top: 3px solid rgb(0, 139, 56);
     margin-left: 5px;
     position: fixed;
     bottom: 10px;

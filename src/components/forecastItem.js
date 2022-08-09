@@ -5,7 +5,7 @@ const ForecastItem = (props) => {
         <div className="forecastItem">
             {props.day}
             <br></br>
-            <img src={props.icon} height="40" width="40"></img>
+            <img src={props.icon} height="50" width="50"></img>
             <br></br>
             {props.high}/{props.low}
         </div>
