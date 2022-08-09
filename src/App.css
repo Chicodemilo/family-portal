@@ -34,7 +34,7 @@
     margin-top: 20px;
     padding-left: 40px;
     width: 55%;
-    height: 770px;
+    height: 870px;
     /* padding-bottom: 80px; */
     overflow: hidden;
     /* border: 1px dotted orangered; */
@@ -43,7 +43,7 @@
 .calendarFade {
     position: absolute;
     width: 55%;
-    height: 770px;
+    height: 870px;
     background: rgb(0,0,0);
     background: linear-gradient(90deg, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 92%, rgba(0,0,0,1) 100%), linear-gradient(180deg, rgba(0,0,0,0) 75%, rgba(0,0,0,1) 99%, rgba(0,0,0,1) 100%);
 }
@@ -54,15 +54,15 @@
     overflow-x: hidden;
     /* border: 1px solid green; */
     width: 55%;
-    height: 770px;
+    height: 870px;
 }
 
 .calendarItemOld {
-    color: rgb(141, 141, 141);
+    color: rgb(78, 101, 94);
     letter-spacing: normal;
     margin-top: 12px;
     margin-bottom: 8px;
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 
 .calendarItem {
@@ -75,6 +75,7 @@
 .calendarItemSoon {
     margin-top: -2px;
     margin-bottom: -2px;
+    color: rgb(155, 227, 255);
     letter-spacing: normal;
     font-size: 1.9em;
 }
@@ -117,7 +118,7 @@
 }
 
 .littleWeather {
-    font-size: .7em;
+    font-size: .6em;
     letter-spacing: normal;
 }
 
@@ -137,7 +138,7 @@
     width: 60px;
     letter-spacing: normal;
     font-size: 0.65em;
-    padding: 10px 30px 10px 30px;
+    padding: 10px 40px 10px 40px;
 }
 
 @font-face {
@@ -179,12 +180,12 @@
     z-index: 100;
     position: absolute;
     display: block;
-    top: 400px;
+    top: 550px;
     right: 40px;
-    width: 800px;
+    width: 47%px;
     height: 500px;
     overflow-y: hidden;
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     padding: 0px;
     /* border-radius: 20px; */
     color: rgb(255, 153, 0);
@@ -219,7 +220,7 @@
 }
 
 .familyStatus {
-    border-top: 2px solid gray;
+    border-top: 2px solid white;
     margin-left: 5px;
     position: fixed;
     bottom: 10px;
