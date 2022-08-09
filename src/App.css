@@ -58,11 +58,12 @@
 }
 
 .calendarItemOld {
-    color: rgb(78, 101, 94);
+    color: rgb(65, 98, 88);
     letter-spacing: normal;
     margin-top: 12px;
     margin-bottom: 8px;
-    font-size: 1.5em;
+    font-size: 1.7em;
+    text-decoration: line-through;
 }
 
 .calendarItem {
@@ -107,7 +108,7 @@
     right: 15px;
     width: 45%;
     height: 140px;
-    font-size: 3em;
+    font-size: 3.9em;
     padding: 0px;
     text-align: center;
 }
@@ -118,7 +119,7 @@
 }
 
 .littleWeather {
-    font-size: .6em;
+    font-size: .55em;
     letter-spacing: normal;
 }
 
@@ -129,7 +130,7 @@
 .forecastBox {
     margin-top: 10px;
     padding-top: 10px;
-    border-top: 2px solid gray;
+    border-top: 1px solid rgb(179, 179, 179);
 }
 
 .forecastItem {
@@ -137,7 +138,7 @@
     height: 60px;
     width: 60px;
     letter-spacing: normal;
-    font-size: 0.65em;
+    font-size: 0.55em;
     padding: 10px 40px 10px 40px;
 }
 
@@ -180,21 +181,21 @@
     z-index: 100;
     position: absolute;
     display: block;
-    top: 550px;
+    top: 500px;
     right: 40px;
-    width: 47%px;
-    height: 500px;
+    width: 47%;
+    height: 550px;
     overflow-y: hidden;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     padding: 0px;
     /* border-radius: 20px; */
     color: rgb(255, 153, 0);
     letter-spacing: normal;
-    font-size: 1.5em;
-    line-height: 1.3em;
+    font-size: 1.8em;
+    line-height: 1.6em;
     text-align: left;
     opacity: 1;
-    animation: fadeinout 95s linear forwards;
+    animation: fadeinout 105s linear forwards;
 }
 
 @keyframes fadeinout {
@@ -206,11 +207,11 @@
         opacity: 0;
     }
 
-    10% {
+    7% {
         opacity: 1;
     }
 
-    98% {
+    99% {
         opacity: 1;
     }
 
@@ -220,7 +221,7 @@
 }
 
 .familyStatus {
-    border-top: 2px solid white;
+    border-top: 1px solid rgb(179, 179, 179);
     margin-left: 5px;
     position: fixed;
     bottom: 10px;
