@@ -111,7 +111,7 @@
     height: 140px;
     font-size: 3.6em;
     padding: 0px;
-    letter-spacing: .07em;
+    letter-spacing: .06em;
     text-align: center;
 }
 
@@ -140,7 +140,7 @@
     height: 60px;
     width: 60px;
     letter-spacing: normal;
-    font-size: 0.6em;
+    font-size: 0.5em;
     padding: 10px 41px 10px 41px;
 }
 
@@ -236,10 +236,10 @@
     display: flex;
     flex-wrap: wrap;
     letter-spacing: normal;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-family: "Courier New", Courier, monospace;
     overflow: hidden;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 .familyItem {
     flex: 0 50%;
