@@ -7,7 +7,7 @@ const WeatherBox = (props) => {
         <div className="weatherBox">
             {props.currentWeather["temp"]}&#176;&nbsp;&nbsp;&nbsp;
             {props.currentWeather["description"]}
-            <img src={props.currentWeather["icon"]} height="40" width="40" className="weatherIcon"></img>
+            <img src={props.currentWeather["icon"]} height="60" width="60" className="weatherIcon"></img>
             <br></br>
             <span className="littleWeather">
                 sunrise: {props.currentWeather["sunrise"]}&nbsp;&nbsp;&nbsp;&nbsp; sunset:{" "}
