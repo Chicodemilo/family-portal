@@ -108,7 +108,7 @@
     right: 15px;
     width: 45%;
     height: 140px;
-    font-size: 3.9em;
+    font-size: 3.7em;
     padding: 0px;
     text-align: center;
 }
@@ -130,7 +130,7 @@
 .forecastBox {
     margin-top: 10px;
     padding-top: 10px;
-    border-top: 1px solid rgb(179, 179, 179);
+    border-top: 2px solid rgb(208, 208, 208);
 }
 
 .forecastItem {
@@ -138,8 +138,8 @@
     height: 60px;
     width: 60px;
     letter-spacing: normal;
-    font-size: 0.55em;
-    padding: 10px 40px 10px 40px;
+    font-size: 0.4em;
+    padding: 10px 41px 10px 41px;
 }
 
 @font-face {
@@ -191,11 +191,11 @@
     /* border-radius: 20px; */
     color: rgb(255, 153, 0);
     letter-spacing: normal;
-    font-size: 1.8em;
-    line-height: 1.6em;
+    font-size: 1.6em;
+    line-height: 1.5em;
     text-align: left;
     opacity: 1;
-    animation: fadeinout 105s linear forwards;
+    animation: fadeinout 95s linear forwards;
 }
 
 @keyframes fadeinout {
@@ -221,7 +221,7 @@
 }
 
 .familyStatus {
-    border-top: 2px solid rgb(255, 0, 0);
+    border-top: 2px solid rgb(207, 207, 207);
     margin-left: 5px;
     position: fixed;
     bottom: 10px;
@@ -237,6 +237,7 @@
     font-size: 1.2em;
     font-family: "Courier New", Courier, monospace;
     overflow: hidden;
+    padding-top: 10px;
 }
 .familyItem {
     flex: 0 50%;
@@ -249,17 +250,17 @@
 .famName {
     font-weight: bold;
     color: rgb(150, 165, 252);
-    font-size: 1.5em;
+    font-size: 1.4em;
     letter-spacing: -0.05em;
 }
 
 .famTime {
     color: gray;
-    font-size: 1.1em;
+    font-size: 1em;
     letter-spacing: -0.1em;
 }
 
 .famStatus {
-    font-size: 1.5em;
+    font-size: 1.4em;
     letter-spacing: -0.05em;
 }
