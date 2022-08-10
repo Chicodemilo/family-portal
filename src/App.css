@@ -132,7 +132,7 @@
 .forecastBox {
     margin-top: 10px;
     padding-top: 10px;
-    border-top: 2px solid rgb(255, 162, 0);
+    border-top: 4px solid rgb(255, 225, 0);
 }
 
 .forecastItem {
