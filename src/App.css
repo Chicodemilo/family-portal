@@ -60,34 +60,34 @@
 
 .calendarItemOld {
     color: rgb(88, 138, 123);
-    letter-spacing: normal;
-    margin-top: 12px;
-    margin-bottom: 8px;
+    letter-spacing: -.03em;;
+    margin-top: 8px;
+    margin-bottom: 6px;
     font-size: 1.6em;
     /* text-decoration: line-through; */
 }
 
 .calendarItem {
-    letter-spacing: normal;
-    margin-top: 12px;
-    margin-bottom: 8px;
-    font-size: 1.8em;
+    letter-spacing: -.03em;;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    font-size: 1.9em;
 }
 
 .calendarItemSoon {
     margin-top: -2px;
     margin-bottom: -2px;
     color: rgb(155, 227, 255);
-    letter-spacing: normal;
-    font-size: 1.9em;
+    letter-spacing: -.03em;;
+    font-size: 2em;
 }
 
 .calendarItemSooner {
     margin-top: -2px;
     margin-bottom: -2px;
     color: rgb(0, 183, 255);
-    letter-spacing: normal;
-    font-size: 2.2em;
+    letter-spacing: -.03em;;
+    font-size: 2.3em;
 }
 
 .twitterScroll {
@@ -140,7 +140,7 @@
     height: 60px;
     width: 60px;
     letter-spacing: normal;
-    font-size: 0.5em;
+    font-size: 0.6em;
     padding: 10px 41px 10px 41px;
 }
 
@@ -193,7 +193,7 @@
     /* border-radius: 20px; */
     color: rgb(255, 153, 0);
     letter-spacing: normal;
-    font-size: 1.6em;
+    font-size: 1.8em;
     line-height: 1.5em;
     text-align: left;
     opacity: 1;
@@ -235,8 +235,8 @@
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    letter-spacing: normal;
-    font-size: 1.1em;
+    letter-spacing: -.04em;;
+    font-size: 1.4em;
     font-family: "Courier New", Courier, monospace;
     overflow: hidden;
     padding-top: 20px;
