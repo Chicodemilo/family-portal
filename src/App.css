@@ -61,17 +61,17 @@
 .calendarItemOld {
     color: rgb(88, 138, 123);
     letter-spacing: -.03em;;
-    margin-top: 8px;
-    margin-bottom: 6px;
+    margin-top: 6px;
+    margin-bottom: 4px;
     font-size: 1.6em;
     /* text-decoration: line-through; */
 }
 
 .calendarItem {
     letter-spacing: -.03em;;
-    margin-top: 10px;
-    margin-bottom: 6px;
-    font-size: 1.9em;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 2.1em;
 }
 
 .calendarItemSoon {
@@ -79,7 +79,7 @@
     margin-bottom: -2px;
     color: rgb(155, 227, 255);
     letter-spacing: -.03em;;
-    font-size: 2em;
+    font-size: 2.2em;
 }
 
 .calendarItemSooner {
@@ -87,7 +87,7 @@
     margin-bottom: -2px;
     color: rgb(0, 183, 255);
     letter-spacing: -.03em;;
-    font-size: 2.3em;
+    font-size: 2.4em;
 }
 
 .twitterScroll {
@@ -131,7 +131,7 @@
 
 .forecastBox {
     margin-top: 10px;
-    padding-top: 10px;
+    padding-top: 5px;
     border-top: 3px solid rgb(0, 100, 250);
 }
 
@@ -140,8 +140,8 @@
     height: 60px;
     width: 60px;
     letter-spacing: normal;
-    font-size: 0.6em;
-    padding: 10px 41px 10px 41px;
+    font-size: 0.67em;
+    padding: 10px 40px 10px 40px;
 }
 
 @font-face {
@@ -263,6 +263,6 @@
 }
 
 .famStatus {
-    font-size: 1.4em;
+    font-size: 1.6em;
     letter-spacing: -0.05em;
 }
