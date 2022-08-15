@@ -154,14 +154,13 @@ class PortalBody extends Component {
                 <p
                     style={{
                         color: "blue",
-                        fontSize: 16,
+                        fontSize: 20,
                         paddingTop: 100,
                         fontWeight: "bold",
                         letterSpacing: 0.6,
                     }}
                 >
-                    Oh No!!!! <br></br>
-                    Goodtime Internet's Got The Blues.
+                    Stank. <br></br>I cain't connect to your calendar. <br></br>
                 </p>
             ) : null;
 
