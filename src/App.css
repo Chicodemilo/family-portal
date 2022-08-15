@@ -26,8 +26,8 @@
 
 .headerDate {
     font-weight: lighter;
-    font-size: 3.1em;
-    letter-spacing: .11em;
+    font-size: 2.8em;
+    letter-spacing: .04em;
 }
 
 .calendarList {
@@ -63,7 +63,7 @@
     letter-spacing: -.03em;;
     margin-top: 4px;
     margin-bottom: 2px;
-    font-size: 1.6em;
+    font-size: 1.5em;
     /* text-decoration: line-through; */
 }
 
@@ -71,7 +71,7 @@
     letter-spacing: -.03em;;
     margin-top: 6px;
     margin-bottom: 4px;
-    font-size: 2.3em;
+    font-size: 2em;
 }
 
 .calendarItemSoon {
@@ -79,7 +79,7 @@
     margin-bottom: -2px;
     color: rgb(155, 227, 255);
     letter-spacing: -.03em;;
-    font-size: 2.3em;
+    font-size: 2.1em;
 }
 
 .calendarItemSooner {
@@ -87,7 +87,7 @@
     margin-bottom: -2px;
     color: rgb(0, 183, 255);
     letter-spacing: -.03em;;
-    font-size: 2.5em;
+    font-size: 2.2em;
 }
 
 .twitterScroll {
@@ -107,9 +107,9 @@
     position: absolute;
     top: 20px;
     right: 15px;
-    width: 45%;
+    width: 49%;
     height: 140px;
-    font-size: 3.6em;
+    font-size: 3.5em;
     padding: 0px;
     letter-spacing: .06em;
     text-align: center;
@@ -121,7 +121,7 @@
 }
 
 .littleWeather {
-    font-size: .55em;
+    font-size: .53em;
     letter-spacing: normal;
 }
 
@@ -140,8 +140,8 @@
     height: 60px;
     width: 60px;
     letter-spacing: normal;
-    font-size: 0.67em;
-    padding: 10px 40px 10px 40px;
+    font-size: 0.5em;
+    padding: 10px 39px 10px 40px;
 }
 
 @font-face {
@@ -193,7 +193,7 @@
     /* border-radius: 20px; */
     color: rgb(255, 153, 0);
     letter-spacing: normal;
-    font-size: 1.9em;
+    font-size: 1.7em;
     line-height: 1.5em;
     text-align: left;
     opacity: 1;
@@ -235,8 +235,6 @@
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    letter-spacing: -.04em;;
-    font-size: 1.4em;
     font-family: "Courier New", Courier, monospace;
     overflow: hidden;
     padding-top: 20px;
@@ -250,19 +248,19 @@
 }
 
 .famName {
-    font-weight: bold;
+    font-weight: bolder;
     color: rgb(150, 165, 252);
-    font-size: 1.4em;
-    letter-spacing: -0.05em;
+    font-size: 1.7em;
+    letter-spacing: -0.01em;
 }
 
 .famTime {
-    color: gray;
-    font-size: 1em;
+    color: rgb(114, 164, 126);
+    font-size: 1.3em;
     letter-spacing: -0.1em;
 }
 
 .famStatus {
-    font-size: 1.6em;
+    font-size: 1.95em;
     letter-spacing: -0.05em;
 }
