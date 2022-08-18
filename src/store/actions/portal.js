@@ -30,7 +30,7 @@ const getTestFromAPI = async () => {
 export const getCalendar = () => {
     return async (dispatch) => {
         try {
-            fetch("http://192.168.1.25/family-portal-api/calendar.php", {
+            fetch("http://192.168.1.34/family-portal-api/calendar.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json",
@@ -64,7 +64,7 @@ export const getCalendar = () => {
 export const getForecast = () => {
     return async (dispatch) => {
         try {
-            fetch("http://192.168.1.25/family-portal-api/forecast.php", {
+            fetch("http://192.168.1.34/family-portal-api/forecast.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json",
@@ -98,7 +98,7 @@ export const getForecast = () => {
 export const getTwitter = () => {
     return async (dispatch) => {
         try {
-            fetch("http://192.168.1.25/family-portal-api/getStatus.php", {
+            fetch("http://192.168.1.34/family-portal-api/getStatus.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json",
@@ -127,7 +127,7 @@ export const getTwitter = () => {
 export const getHistory = () => {
     return async (dispatch) => {
         try {
-            fetch("http://192.168.1.25/family-portal-api/history.php", {
+            fetch("http://192.168.1.34/family-portal-api/history.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json",
@@ -157,7 +157,7 @@ export const getWeather = () => {
     //test
     return async (dispatch) => {
         try {
-            fetch("http://192.168.1.25/family-portal-api/weather.php", {
+            fetch("http://192.168.1.34/family-portal-api/weather.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json",
@@ -191,7 +191,7 @@ export const getWeather = () => {
 export const getJoke = () => {
     return async (dispatch) => {
         try {
-            fetch("http://192.168.1.25/family-portal-api/joke.php", {
+            fetch("http://192.168.1.34/family-portal-api/joke.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json",
@@ -226,7 +226,7 @@ export const getFact = () => {
     return async (dispatch) => {
         try {
             //here
-            fetch("http://192.168.1.25/family-portal-api/fact.php", {
+            fetch("http://192.168.1.34/family-portal-api/fact.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json",
@@ -260,7 +260,7 @@ export const getFact = () => {
 export const getQuote = () => {
     return async (dispatch) => {
         try {
-            fetch("http://192.168.1.25/family-portal-api/quote.php", {
+            fetch("http://192.168.1.34/family-portal-api/quote.php", {
                 method: "get",
                 headers: {
                     Accept: "application/json",

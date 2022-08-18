@@ -154,7 +154,7 @@ class PortalBody extends Component {
                 <p
                     style={{
                         color: "blue",
-                        fontSize: 20,
+                        fontSize: 21,
                         paddingTop: 100,
                         fontWeight: "bold",
                         letterSpacing: 0.6,
