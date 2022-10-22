@@ -46,8 +46,8 @@ const CalendarList = (props) => {
     });
     return (
         <div className="calendarList">
-            <div className="actualList">{list}</div>
             <div className="calendarFade"></div>
+            <div className="actualList">{list}</div>
         </div>
     );
 };

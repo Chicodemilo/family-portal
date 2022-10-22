@@ -43,14 +43,15 @@ class PortalBody extends Component {
                 }
             });
         }
-
+        const foreCastTime = 60 * 60000; //one hour in milliseconds
+        const weatherTime = 15 * 60000; //15min in milliseconds
         setInterval(this.showFunnyThing, 300000);
         // setInterval(this.showFunnyThing, 5000);
         setInterval(this.handleTimeChange, 1000);
         setInterval(this.handleGetCalendar, 20000);
         setInterval(this.handleGetTwitter, 1000);
-        setInterval(this.handleGetWeather, 900000);
-        setInterval(this.handleGetForecast, 1800000);
+        setInterval(this.handleGetWeather, weatherTime);
+        setInterval(this.handleGetForecast, foreCastTime);
     }
 
     showFunnyThing = () => {
